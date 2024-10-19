@@ -23,7 +23,7 @@ namespace AppConsoleLivres
         }
 
         // Methode pour aficher les info du livre
-        public void Afficher()
+        public virtual void Afficher()
         {
             Console.WriteLine("Titre : " + tittre);
             Console.WriteLine("Auteur : " + auteur);
