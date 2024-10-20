@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AppConsoleLivres
 {
@@ -6,19 +7,33 @@ namespace AppConsoleLivres
     {
         static void Main(string[] args)
         {
-            // Création de trois objets Roman avec des titres de la littérature franco-marocaine
+            // cree des objet Roman
             Roman roman1 = new Roman("Le Pain nu", "Mohamed Choukri", 152, "Autobiographie");
             Roman roman2 = new Roman("L'Enfant de sable", "Tahar Ben Jelloun", 198, "Fiction");
             Roman roman3 = new Roman("La Boîte à merveilles", "Ahmed Sefrioui", 245, "Roman autobiographique");
 
-            // Affichage des informations des romans
-            roman1.Afficher();
-            roman2.Afficher();
-            roman3.Afficher();
+            // cree des objet Revue
+            Revue revue1 = new Revue("Optique", "Ibn al-Haytham", 20.99, 1, 1573);
+            Revue revue2 = new Revue("La géographie", "Al-Idrisi", 18.50, 2, 1592);
+            Revue revue3 = new Revue("Voyages", "Ibn Battuta", 12.99, 3, 1545);
 
-            // Garde la console ouverte jusqu'à ce que l'utilisateur appuie sur une touche
-            Console.WriteLine("Appuyez sur une touche pour fermer...");
-            Console.ReadKey();
+            // faire une list de type Livre
+            List<Livre> listeLivres = new List<Livre>();
+
+            // ajouter les objet a la liste
+            listeLivres.Add(roman1);
+            listeLivres.Add(roman2);
+            listeLivres.Add(roman3);
+            listeLivres.Add(revue1);
+            listeLivres.Add(revue2);
+            listeLivres.Add(revue3);
+
+            // parcourir la liste pour montrer les info
+            foreach (Livre livre in listeLivres)
+            {
+                livre.Afficher();
+                Console.WriteLine(""); // laiss er une ligne vide
+            }
         }
     }
 }
